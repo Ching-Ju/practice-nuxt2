@@ -1,9 +1,11 @@
 <template>
-  <Tutorial />
+  <div>
+    {{ title }}
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'IndexPage'
-}
+<script setup>
+import { ref } from '@nuxtjs/composition-api'
+
+const title = ref('hello')
 </script>
