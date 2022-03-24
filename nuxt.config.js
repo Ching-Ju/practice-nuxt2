@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'test',
+    title: 'practice-nuxt2-laravel',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,11 +18,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'primeflex/primeflex.css'
+    'primeflex/primeflex.css',
+    '~/assets/styles/layout.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/primevue.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -91,5 +93,12 @@ export default {
   build: {
     // https://github.com/primefaces/primevue/issues/844
     transpile: ['primevue']
+  },
+
+  primevue: {
+    theme: 'saga-blue',
+    ripple: true,
+    inputStyle: 'outlined',
+    components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge']
   }
 }
