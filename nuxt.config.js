@@ -43,8 +43,42 @@ export default {
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
     'primevue/nuxt',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // https://dev.auth.nuxtjs.org/
+    '@nuxtjs/auth-next'
   ],
+
+  auth: {
+    strategies: {
+      cookie: {
+        endpoints: {
+          csrf: {
+            url: '/sanctum/csrf-cookie'
+          },
+          login: {
+            url: '/api/login'
+          },
+          logout: {
+            url: '/api/logout'
+          },
+          user: {
+            url: '/api/user'
+          }
+        },
+        user: {
+          property: 'data'
+        }
+      }
+    },
+
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      home: '/'
+    },
+
+    plugins: ['~/plugins/axios']
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
