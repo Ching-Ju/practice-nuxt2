@@ -47,12 +47,11 @@
 </template>
 
 <script setup>
+import useAuth from '~/composables/useAuth'
+
+const { logout } = useAuth()
 
 function onMenuToggle (event) {
   this.$emit('menu-toggle', event)
-}
-
-function logout () {
-  this.$auth.logout()
 }
 </script>
