@@ -46,30 +46,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    darkTheme () {
-      return this.$appState.darkTheme
-    }
-  },
+<script setup>
 
-  methods: {
-    onMenuToggle (event) {
-      this.$emit('menu-toggle', event)
-    },
+function onMenuToggle (event) {
+  this.$emit('menu-toggle', event)
+}
 
-    onTopbarMenuToggle (event) {
-      this.$emit('topbar-menu-toggle', event)
-    },
-
-    topbarImage () {
-      return this.$appState.darkTheme ? 'images/logo-white.svg' : 'images/logo-dark.svg'
-    },
-
-    logout () {
-      this.$auth.logout()
-    }
-  }
+function logout () {
+  this.$auth.logout()
 }
 </script>

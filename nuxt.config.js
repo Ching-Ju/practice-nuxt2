@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'practice-nuxt2-laravel',
+    title: process.env.APP_NAME,
     htmlAttrs: {
       lang: 'en'
     },
@@ -85,7 +85,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost',
+    baseURL: process.env.BASE_URL,
     credentials: true
   },
 
@@ -100,5 +100,9 @@ export default {
     ripple: true,
     inputStyle: 'outlined',
     components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge']
+  },
+
+  publicRuntimeConfig: {
+    appName: process.env.APP_NAME
   }
 }
