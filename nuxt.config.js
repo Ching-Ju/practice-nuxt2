@@ -58,10 +58,10 @@ export default {
             url: '/sanctum/csrf-cookie'
           },
           login: {
-            url: '/api/login'
+            url: '/login'
           },
           logout: {
-            url: '/api/logout'
+            url: '/logout'
           },
           user: {
             url: '/api/user'
