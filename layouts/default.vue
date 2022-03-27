@@ -161,7 +161,7 @@ export default {
       }]
     },
     logo () {
-      return (this.$appState.darkTheme) ? 'images/logo-white.svg' : 'images/logo.svg'
+      return (this.$store.state.appState.darkTheme) ? 'images/logo-white.svg' : 'images/logo.svg'
     }
   },
   watch: {

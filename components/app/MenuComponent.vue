@@ -2,7 +2,7 @@
   <div class="layout-menu-container">
     <AppSubmenuComponent :items="model" class="layout-menu" :root="true" @menuitem-click="onMenuItemClick" @keydown="onKeyDown" />
     <a href="https://www.primefaces.org/primeblocks-vue" class="block mt-3">
-      <!-- <img alt="primeblocks" :src="bannerImage()" class="w-full"> -->
+      <img alt="primeblocks" :src="bannerImage()" class="w-full">
     </a>
   </div>
 </template>
@@ -15,11 +15,7 @@ export default {
       default: () => []
     }
   },
-  computed: {
-    darkTheme () {
-      return this.$appState?.darkTheme
-    }
-  },
+
   methods: {
     onMenuItemClick (event) {
       this.$emit('menuitem-click', event)
@@ -32,7 +28,7 @@ export default {
       }
     },
     bannerImage () {
-      return this.$appState?.darkTheme ? 'images/banner-primeblocks-dark.png' : 'images/banner-primeblocks.png'
+      return this.$store.state.appState.darkTheme ? 'images/banner-primeblocks-dark.png' : 'images/banner-primeblocks.png'
     }
   }
 }
