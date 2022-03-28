@@ -16,6 +16,8 @@ export default {
     ]
   },
 
+  ssr: false,
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'primeflex/primeflex.css',
@@ -96,7 +98,6 @@ export default {
   },
 
   primevue: {
-    theme: 'saga-blue',
     ripple: true,
     inputStyle: 'outlined',
     components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge', 'RadioButton', 'InputSwitch']

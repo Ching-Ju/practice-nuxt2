@@ -1,8 +1,8 @@
 export default {
   state () {
     return {
-      darkTheme: false,
-      theme: 'saga-blue'
+      darkTheme: true,
+      theme: 'bootstrap4-dark-blue'
     }
   },
 

@@ -153,7 +153,7 @@ export default {
         {
           id: 'theme-link',
           rel: 'stylesheet',
-          href: '/themes/saga-blue/theme.css'
+          href: `/themes/${this.$store.state.appState.theme}/theme.css`
         }
       ]
     }
