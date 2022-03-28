@@ -99,7 +99,7 @@ export default {
     theme: 'saga-blue',
     ripple: true,
     inputStyle: 'outlined',
-    components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge']
+    components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge', 'RadioButton', 'InputSwitch']
   },
 
   publicRuntimeConfig: {

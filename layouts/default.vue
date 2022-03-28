@@ -12,7 +12,7 @@
       <AppFooterComponent />
     </div>
 
-    <!-- <AppConfig :layout-mode="layoutMode" @layout-change="onLayoutChange" @change-theme="changeTheme" /> -->
+    <AppConfigComponent :layout-mode="layoutMode" @layout-change="onLayoutChange" @change-theme="changeTheme" />
     <transition name="layout-mask">
       <div v-if="mobileMenuActive" class="layout-mask p-component-overlay" />
     </transition>
@@ -21,8 +21,6 @@
 
 <script>
 export default {
-  middleware: 'auth',
-  emits: ['change-theme'],
   data () {
     return {
       layoutMode: 'static',
@@ -148,6 +146,19 @@ export default {
       ]
     }
   },
+
+  head () {
+    return {
+      link: [
+        {
+          id: 'theme-link',
+          rel: 'stylesheet',
+          href: '/themes/saga-blue/theme.css'
+        }
+      ]
+    }
+  },
+
   computed: {
     containerClass () {
       return ['layout-wrapper', {
@@ -231,7 +242,14 @@ export default {
       return true
     },
     changeTheme (event) {
-      this.$emit('change-theme', event)
+      const themeElement = document.getElementById('theme-link')
+      themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$store.state.appState.theme, event.theme))
+      this.$store.commit('appState/setTheme', event.theme)
+      this.$store.commit('appState/setDarkTheme', event.dark)
+
+      // if (event.theme.startsWith('md')) {
+      //   this.$primevue.config.ripple = true
+      // }
     }
   }
 }
