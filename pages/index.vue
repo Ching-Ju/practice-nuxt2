@@ -24,6 +24,8 @@
 
     <div class="col-12 xl:col-6">
       <dashboard-sale-overview-component />
+
+      <dashboard-notification-component />
     </div>
   </div>
 </template>
