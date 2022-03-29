@@ -21,5 +21,9 @@
 
       <dashboard-best-selling-product-component />
     </div>
+
+    <div class="col-12 xl:col-6">
+      <dashboard-sale-overview-component />
+    </div>
   </div>
 </template>

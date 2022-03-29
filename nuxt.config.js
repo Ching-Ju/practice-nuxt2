@@ -100,7 +100,7 @@ export default {
   primevue: {
     ripple: true,
     inputStyle: 'outlined',
-    components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge', 'RadioButton', 'InputSwitch', 'DataTable', 'Column', 'Menu']
+    components: ['InputText', 'Button', 'Toast', 'Password', 'Checkbox', 'Badge', 'RadioButton', 'InputSwitch', 'DataTable', 'Column', 'Menu', 'Chart']
   },
 
   publicRuntimeConfig: {

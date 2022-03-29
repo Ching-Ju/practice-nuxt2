@@ -12,13 +12,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    cardTitle: {
-      type: String,
-      default: ''
-    }
+<script setup>
+import { defineProps } from '@nuxtjs/composition-api'
+
+defineProps({
+  cardTitle: {
+    type: String,
+    default: ''
   }
-}
+})
 </script>
