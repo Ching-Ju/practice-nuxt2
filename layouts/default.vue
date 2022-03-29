@@ -23,6 +23,8 @@
 export default {
   name: 'Default',
 
+  middleware: 'auth',
+
   data () {
     return {
       layoutMode: 'static',
