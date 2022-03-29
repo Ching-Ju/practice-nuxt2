@@ -15,5 +15,9 @@
     <dashboard-comment-component
       class="col-12 lg:col-6 xl:col-3"
     />
+
+    <dashboard-recent-sale-component
+      class="col-12 xl:col-6"
+    />
   </div>
 </template>
