@@ -21,6 +21,8 @@
 
 <script>
 export default {
+  name: 'Default',
+
   data () {
     return {
       layoutMode: 'static',
