@@ -1,8 +1,8 @@
 <template>
   <div class="layout-topbar">
     <nuxt-link to="/" class="layout-topbar-logo">
-      <img alt="Logo" :src="topbarImage()">
-      <span>SAKAI</span>
+      <img alt="Logo" :src="$store.getters['appState/topbarImage']">
+      <span>{{ $config.appName }}</span>
     </nuxt-link>
 
     <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">
@@ -50,10 +50,6 @@
 import useAuth from '~/composables/useAuth'
 
 const { logout } = useAuth()
-
-function topbarImage () {
-  return this.$store.state.appState.darkTheme ? 'images/logo-white.svg' : 'images/logo-dark.svg'
-}
 
 function onMenuToggle (event) {
   this.$emit('menu-toggle', event)

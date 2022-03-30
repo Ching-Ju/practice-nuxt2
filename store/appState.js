@@ -7,8 +7,20 @@ export default {
   },
 
   getters: {
+    bannerImage (state) {
+      return state.darkTheme ? 'images/banner-primeblocks-dark.png' : 'images/banner-primeblocks.png'
+    },
+
+    footerImage (state) {
+      return state.darkTheme ? '/images/logo-white.svg' : '/images/logo-dark.svg'
+    },
+
     logoColor (state) {
       return state.darkTheme ? 'white' : 'dark'
+    },
+
+    topbarImage (state) {
+      return state.darkTheme ? 'images/logo-white.svg' : 'images/logo-dark.svg'
     }
   },
 
