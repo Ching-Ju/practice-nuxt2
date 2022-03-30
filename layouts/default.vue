@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: 'Default',
 
   middleware: 'auth',
@@ -182,7 +183,7 @@ export default {
   watch: {
     $route () {
       this.menuActive = false
-      this.$toast.removeAllGroups()
+      // this.$toast.removeAllGroups()
     }
   },
   beforeUpdate () {
