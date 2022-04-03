@@ -17,6 +17,7 @@ import ColorPicker from 'primevue/colorpicker'
 import Column from 'primevue/column'
 import DataTable from 'primevue/datatable'
 import Dropdown from 'primevue/dropdown'
+import FileUpload from 'primevue/fileupload'
 import Galleria from 'primevue/galleria'
 import ImagePreview from 'primevue/imagepreview'
 import InputMask from 'primevue/inputmask'
@@ -48,6 +49,7 @@ Vue.component('ColorPicker', ColorPicker)
 Vue.component('Column', Column)
 Vue.component('DataTable', DataTable)
 Vue.component('Dropdown', Dropdown)
+Vue.component('FileUpload', FileUpload)
 Vue.component('Galleria', Galleria)
 Vue.component('ImagePreview', ImagePreview)
 Vue.component('InputMask', InputMask)
