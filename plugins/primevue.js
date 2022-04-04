@@ -27,6 +27,7 @@ import Fieldset from 'primevue/fieldset'
 import FileUpload from 'primevue/fileupload'
 import Galleria from 'primevue/galleria'
 import ImagePreview from 'primevue/imagepreview'
+import InlineMessage from 'primevue/inlinemessage'
 import InputMask from 'primevue/inputmask'
 import InputNumber from 'primevue/inputnumber'
 import InputSwitch from 'primevue/inputswitch'
@@ -35,6 +36,7 @@ import Knob from 'primevue/knob'
 import Listbox from 'primevue/listbox'
 import Menu from 'primevue/menu'
 import MegaMenu from 'primevue/megamenu'
+import Message from 'primevue/message'
 import Menubar from 'primevue/menubar'
 import MultiSelect from 'primevue/multiselect'
 import Panel from 'primevue/panel'
@@ -52,6 +54,7 @@ import TabPanel from 'primevue/tabpanel'
 import TabView from 'primevue/tabview'
 import Textarea from 'primevue/textarea'
 import Toast from 'primevue/toast'
+import ToastService from 'primevue/toastservice'
 import ToggleButton from 'primevue/togglebutton'
 import Toolbar from 'primevue/toolbar'
 
@@ -77,6 +80,7 @@ Vue.component('Fieldset', Fieldset)
 Vue.component('FileUpload', FileUpload)
 Vue.component('Galleria', Galleria)
 Vue.component('ImagePreview', ImagePreview)
+Vue.component('InlineMessage', InlineMessage)
 Vue.component('InputMask', InputMask)
 Vue.component('InputNumber', InputNumber)
 Vue.component('InputSwitch', InputSwitch)
@@ -86,6 +90,7 @@ Vue.component('Listbox', Listbox)
 Vue.component('MegaMenu', MegaMenu)
 Vue.component('Menu', Menu)
 Vue.component('Menubar', Menubar)
+Vue.component('Message', Message)
 Vue.component('MultiSelect', MultiSelect)
 Vue.component('Panel', Panel)
 Vue.component('PanelMenu', PanelMenu)
@@ -109,3 +114,5 @@ Vue.directive('tooltip', Tooltip)
 Vue.directive('ripple', Ripple)
 Vue.directive('badge', BadgeDirective)
 Vue.directive('styleclass', StyleClass)
+
+Vue.use(ToastService)
