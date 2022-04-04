@@ -7,6 +7,7 @@ import StyleClass from 'primevue/styleclass'
 
 import AutoComplete from 'primevue/autocomplete'
 import Badge from 'primevue/badge'
+import Breadcrumb from 'primevue/breadcrumb'
 import Button from 'primevue/button'
 import Calendar from 'primevue/calendar'
 import Carousel from 'primevue/carousel'
@@ -15,6 +16,7 @@ import Checkbox from 'primevue/checkbox'
 import Chips from 'primevue/chips'
 import ColorPicker from 'primevue/colorpicker'
 import Column from 'primevue/column'
+import ContextMenu from 'primevue/contextmenu'
 import DataTable from 'primevue/datatable'
 import Dropdown from 'primevue/dropdown'
 import FileUpload from 'primevue/fileupload'
@@ -27,18 +29,24 @@ import InputText from 'primevue/inputtext'
 import Knob from 'primevue/knob'
 import Listbox from 'primevue/listbox'
 import Menu from 'primevue/menu'
+import MegaMenu from 'primevue/megamenu'
+import Menubar from 'primevue/menubar'
 import MultiSelect from 'primevue/multiselect'
+import PanelMenu from 'primevue/panelmenu'
 import Password from 'primevue/password'
 import RadioButton from 'primevue/radiobutton'
 import Rating from 'primevue/rating'
 import SelectButton from 'primevue/selectbutton'
 import Slider from 'primevue/slider'
+import Steps from 'primevue/steps'
+import TabMenu from 'primevue/tabmenu'
 import Textarea from 'primevue/textarea'
 import Toast from 'primevue/toast'
 import ToggleButton from 'primevue/togglebutton'
 
 Vue.component('AutoComplete', AutoComplete)
 Vue.component('Badge', Badge)
+Vue.component('Breadcrumb', Breadcrumb)
 Vue.component('Button', Button)
 Vue.component('Calendar', Calendar)
 Vue.component('Carousel', Carousel)
@@ -47,6 +55,7 @@ Vue.component('Checkbox', Checkbox)
 Vue.component('Chips', Chips)
 Vue.component('ColorPicker', ColorPicker)
 Vue.component('Column', Column)
+Vue.component('ContextMenu', ContextMenu)
 Vue.component('DataTable', DataTable)
 Vue.component('Dropdown', Dropdown)
 Vue.component('FileUpload', FileUpload)
@@ -58,13 +67,18 @@ Vue.component('InputSwitch', InputSwitch)
 Vue.component('InputText', InputText)
 Vue.component('Knob', Knob)
 Vue.component('Listbox', Listbox)
+Vue.component('MegaMenu', MegaMenu)
 Vue.component('Menu', Menu)
+Vue.component('Menubar', Menubar)
 Vue.component('MultiSelect', MultiSelect)
+Vue.component('PanelMenu', PanelMenu)
 Vue.component('Password', Password)
 Vue.component('RadioButton', RadioButton)
 Vue.component('Rating', Rating)
 Vue.component('SelectButton', SelectButton)
 Vue.component('Slider', Slider)
+Vue.component('Steps', Steps)
+Vue.component('TabMenu', TabMenu)
 Vue.component('Textarea', Textarea)
 Vue.component('Toast', Toast)
 Vue.component('ToggleButton', ToggleButton)
