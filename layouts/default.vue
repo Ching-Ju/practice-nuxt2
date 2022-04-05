@@ -84,7 +84,7 @@ export default {
             { label: 'Landing', icon: 'pi pi-fw pi-globe', to: '/landing' },
             { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
             { label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error' },
-            { label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound' },
+            { label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/not-found' },
             { label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access' },
             { label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty' }
           ]
