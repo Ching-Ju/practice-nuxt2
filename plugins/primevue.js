@@ -46,6 +46,7 @@ import RadioButton from 'primevue/radiobutton'
 import Rating from 'primevue/rating'
 import SelectButton from 'primevue/selectbutton'
 import Slider from 'primevue/slider'
+import SplitButton from 'primevue/splitbutton'
 import Splitter from 'primevue/splitter'
 import SplitterPanel from 'primevue/splitterpanel'
 import Steps from 'primevue/steps'
@@ -99,6 +100,7 @@ Vue.component('RadioButton', RadioButton)
 Vue.component('Rating', Rating)
 Vue.component('SelectButton', SelectButton)
 Vue.component('Slider', Slider)
+Vue.component('SplitButton', SplitButton)
 Vue.component('Splitter', Splitter)
 Vue.component('SplitterPanel', SplitterPanel)
 Vue.component('Steps', Steps)
