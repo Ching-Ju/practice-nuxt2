@@ -1,7 +1,7 @@
 <template>
   <div class="layout-topbar">
     <nuxt-link to="/" class="layout-topbar-logo">
-      <img alt="Logo" :src="$store.getters['appState/topbarImage']">
+      <img alt="Logo" :src="$_r($store.getters['appState/topbarImage'])">
       <span>{{ $config.appName }}</span>
     </nuxt-link>
 
