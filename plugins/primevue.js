@@ -62,6 +62,8 @@ import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import ToggleButton from 'primevue/togglebutton'
 import Toolbar from 'primevue/toolbar'
+import Tree from 'primevue/tree'
+import TreeTable from 'primevue/treetable'
 
 Vue.component('Accordion', Accordion)
 Vue.component('AccordionTab', AccordionTab)
@@ -119,6 +121,8 @@ Vue.component('Textarea', Textarea)
 Vue.component('Toast', Toast)
 Vue.component('ToggleButton', ToggleButton)
 Vue.component('Toolbar', Toolbar)
+Vue.component('Tree', Tree)
+Vue.component('TreeTable', TreeTable)
 
 Vue.directive('tooltip', Tooltip)
 Vue.directive('ripple', Ripple)

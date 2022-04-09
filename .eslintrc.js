@@ -17,7 +17,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/multi-word-component-names': ['error', {
-      ignores: ['default', 'index', 'login', 'error', 'media', 'crud', 'input', 'file', 'chart', 'menu', 'panel', 'messages', 'button', 'table', 'list']
+      ignores: ['default', 'index', 'login', 'error', 'media', 'crud', 'input', 'file', 'chart', 'menu', 'panel', 'messages', 'button', 'table', 'list', 'tree']
     }]
   }
 }
