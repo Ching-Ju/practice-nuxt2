@@ -21,6 +21,8 @@ import ColorPicker from 'primevue/colorpicker'
 import Column from 'primevue/column'
 import ContextMenu from 'primevue/contextmenu'
 import DataTable from 'primevue/datatable'
+import DataView from 'primevue/dataview'
+import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
 import Divider from 'primevue/divider'
 import Dropdown from 'primevue/dropdown'
 import Fieldset from 'primevue/fieldset'
@@ -39,9 +41,11 @@ import MegaMenu from 'primevue/megamenu'
 import Message from 'primevue/message'
 import Menubar from 'primevue/menubar'
 import MultiSelect from 'primevue/multiselect'
+import OrderList from 'primevue/orderlist'
 import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
 import Password from 'primevue/password'
+import PickList from 'primevue/picklist'
 import RadioButton from 'primevue/radiobutton'
 import Rating from 'primevue/rating'
 import SelectButton from 'primevue/selectbutton'
@@ -75,6 +79,8 @@ Vue.component('ColorPicker', ColorPicker)
 Vue.component('Column', Column)
 Vue.component('ContextMenu', ContextMenu)
 Vue.component('DataTable', DataTable)
+Vue.component('DataView', DataView)
+Vue.component('DataViewLayoutOptions', DataViewLayoutOptions)
 Vue.component('Divider', Divider)
 Vue.component('Dropdown', Dropdown)
 Vue.component('Fieldset', Fieldset)
@@ -93,9 +99,11 @@ Vue.component('Menu', Menu)
 Vue.component('Menubar', Menubar)
 Vue.component('Message', Message)
 Vue.component('MultiSelect', MultiSelect)
+Vue.component('OrderList', OrderList)
 Vue.component('Panel', Panel)
 Vue.component('PanelMenu', PanelMenu)
 Vue.component('Password', Password)
+Vue.component('PickList', PickList)
 Vue.component('RadioButton', RadioButton)
 Vue.component('Rating', Rating)
 Vue.component('SelectButton', SelectButton)
