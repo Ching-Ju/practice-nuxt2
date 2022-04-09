@@ -8,7 +8,7 @@ export default {
 
   getters: {
     bannerImage (state) {
-      return state.darkTheme ? 'images/banner-primeblocks-dark.png' : 'images/banner-primeblocks.png'
+      return state.darkTheme ? '/images/banner-primeblocks-dark.png' : '/images/banner-primeblocks.png'
     },
 
     barOptions (state) {
@@ -230,7 +230,7 @@ export default {
     },
 
     topbarImage (state) {
-      return state.darkTheme ? 'images/logo-white.svg' : 'images/logo-dark.svg'
+      return state.darkTheme ? '/images/logo-white.svg' : '/images/logo-dark.svg'
     }
   },
 

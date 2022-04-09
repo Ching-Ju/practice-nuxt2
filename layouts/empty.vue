@@ -13,7 +13,7 @@ export default {
         {
           id: 'theme-link',
           rel: 'stylesheet',
-          href: `/themes/${this.$store.state.appState.theme}/theme.css`
+          href: this.$_r(`/themes/${this.$store.state.appState.theme}/theme.css`)
         }
       ]
     }

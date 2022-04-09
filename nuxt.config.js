@@ -1,3 +1,5 @@
+const routerBase = process.env.APP_ENV === 'GH_PAGES' ? { base: process.env.APP_PREFIX } : {}
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -16,6 +18,12 @@ export default {
     ]
   },
 
+  router: {
+    ...routerBase
+  },
+
+  target: 'static',
+
   ssr: false,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -26,7 +34,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/primevue.js'
+    '~/plugins/primevue.js',
+    '~/plugins/utils.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
