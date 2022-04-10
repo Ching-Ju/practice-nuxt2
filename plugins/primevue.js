@@ -19,10 +19,13 @@ import Checkbox from 'primevue/checkbox'
 import Chips from 'primevue/chips'
 import ColorPicker from 'primevue/colorpicker'
 import Column from 'primevue/column'
+import ConfirmPopup from 'primevue/confirmpopup'
+import ConfirmationService from 'primevue/confirmationservice'
 import ContextMenu from 'primevue/contextmenu'
 import DataTable from 'primevue/datatable'
 import DataView from 'primevue/dataview'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import Dialog from 'primevue/dialog'
 import Divider from 'primevue/divider'
 import Dropdown from 'primevue/dropdown'
 import Fieldset from 'primevue/fieldset'
@@ -42,6 +45,7 @@ import Message from 'primevue/message'
 import Menubar from 'primevue/menubar'
 import MultiSelect from 'primevue/multiselect'
 import OrderList from 'primevue/orderlist'
+import OverlayPanel from 'primevue/overlaypanel'
 import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
 import Password from 'primevue/password'
@@ -49,6 +53,7 @@ import PickList from 'primevue/picklist'
 import RadioButton from 'primevue/radiobutton'
 import Rating from 'primevue/rating'
 import SelectButton from 'primevue/selectbutton'
+import Sidebar from 'primevue/sidebar'
 import Slider from 'primevue/slider'
 import SplitButton from 'primevue/splitbutton'
 import Splitter from 'primevue/splitter'
@@ -79,10 +84,13 @@ Vue.component('Checkbox', Checkbox)
 Vue.component('Chips', Chips)
 Vue.component('ColorPicker', ColorPicker)
 Vue.component('Column', Column)
+Vue.component('ConfirmPopup', ConfirmPopup)
+Vue.component('ConfirmationService', ConfirmationService)
 Vue.component('ContextMenu', ContextMenu)
 Vue.component('DataTable', DataTable)
 Vue.component('DataView', DataView)
 Vue.component('DataViewLayoutOptions', DataViewLayoutOptions)
+Vue.component('Dialog', Dialog)
 Vue.component('Divider', Divider)
 Vue.component('Dropdown', Dropdown)
 Vue.component('Fieldset', Fieldset)
@@ -102,6 +110,7 @@ Vue.component('Menubar', Menubar)
 Vue.component('Message', Message)
 Vue.component('MultiSelect', MultiSelect)
 Vue.component('OrderList', OrderList)
+Vue.component('OverlayPanel', OverlayPanel)
 Vue.component('Panel', Panel)
 Vue.component('PanelMenu', PanelMenu)
 Vue.component('Password', Password)
@@ -109,6 +118,7 @@ Vue.component('PickList', PickList)
 Vue.component('RadioButton', RadioButton)
 Vue.component('Rating', Rating)
 Vue.component('SelectButton', SelectButton)
+Vue.component('Sidebar', Sidebar)
 Vue.component('Slider', Slider)
 Vue.component('SplitButton', SplitButton)
 Vue.component('Splitter', Splitter)
@@ -129,4 +139,5 @@ Vue.directive('ripple', Ripple)
 Vue.directive('badge', BadgeDirective)
 Vue.directive('styleclass', StyleClass)
 
+Vue.use(ConfirmationService)
 Vue.use(ToastService)
