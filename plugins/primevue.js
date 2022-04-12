@@ -8,6 +8,8 @@ import StyleClass from 'primevue/styleclass'
 import Accordion from 'primevue/accordion'
 import AccordionTab from 'primevue/accordiontab'
 import AutoComplete from 'primevue/autocomplete'
+import Avatar from 'primevue/avatar'
+import AvatarGroup from 'primevue/avatargroup'
 import Badge from 'primevue/badge'
 import Breadcrumb from 'primevue/breadcrumb'
 import Button from 'primevue/button'
@@ -16,6 +18,7 @@ import Card from 'primevue/card'
 import Carousel from 'primevue/carousel'
 import Chart from 'primevue/chart'
 import Checkbox from 'primevue/checkbox'
+import Chip from 'primevue/chip'
 import Chips from 'primevue/chips'
 import ColorPicker from 'primevue/colorpicker'
 import Column from 'primevue/column'
@@ -50,9 +53,13 @@ import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
 import Password from 'primevue/password'
 import PickList from 'primevue/picklist'
+import ProgressBar from 'primevue/progressbar'
 import RadioButton from 'primevue/radiobutton'
 import Rating from 'primevue/rating'
+import ScrollPanel from 'primevue/scrollpanel'
+import ScrollTop from 'primevue/scrolltop'
 import SelectButton from 'primevue/selectbutton'
+import Skeleton from 'primevue/skeleton'
 import Sidebar from 'primevue/sidebar'
 import Slider from 'primevue/slider'
 import SplitButton from 'primevue/splitbutton'
@@ -62,6 +69,7 @@ import Steps from 'primevue/steps'
 import TabMenu from 'primevue/tabmenu'
 import TabPanel from 'primevue/tabpanel'
 import TabView from 'primevue/tabview'
+import Tag from 'primevue/tag'
 import Textarea from 'primevue/textarea'
 import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
@@ -73,6 +81,8 @@ import TreeTable from 'primevue/treetable'
 Vue.component('Accordion', Accordion)
 Vue.component('AccordionTab', AccordionTab)
 Vue.component('AutoComplete', AutoComplete)
+Vue.component('Avatar', Avatar)
+Vue.component('AvatarGroup', AvatarGroup)
 Vue.component('Badge', Badge)
 Vue.component('Breadcrumb', Breadcrumb)
 Vue.component('Button', Button)
@@ -81,6 +91,7 @@ Vue.component('Card', Card)
 Vue.component('Carousel', Carousel)
 Vue.component('Chart', Chart)
 Vue.component('Checkbox', Checkbox)
+Vue.component('Chip', Chip)
 Vue.component('Chips', Chips)
 Vue.component('ColorPicker', ColorPicker)
 Vue.component('Column', Column)
@@ -115,9 +126,13 @@ Vue.component('Panel', Panel)
 Vue.component('PanelMenu', PanelMenu)
 Vue.component('Password', Password)
 Vue.component('PickList', PickList)
+Vue.component('ProgressBar', ProgressBar)
 Vue.component('RadioButton', RadioButton)
 Vue.component('Rating', Rating)
+Vue.component('ScrollPanel', ScrollPanel)
+Vue.component('ScrollTop', ScrollTop)
 Vue.component('SelectButton', SelectButton)
+Vue.component('Skeleton', Skeleton)
 Vue.component('Sidebar', Sidebar)
 Vue.component('Slider', Slider)
 Vue.component('SplitButton', SplitButton)
@@ -127,6 +142,7 @@ Vue.component('Steps', Steps)
 Vue.component('TabMenu', TabMenu)
 Vue.component('TabPanel', TabPanel)
 Vue.component('TabView', TabView)
+Vue.component('Tag', Tag)
 Vue.component('Textarea', Textarea)
 Vue.component('Toast', Toast)
 Vue.component('ToggleButton', ToggleButton)
