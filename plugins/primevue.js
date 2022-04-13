@@ -71,6 +71,7 @@ import TabPanel from 'primevue/tabpanel'
 import TabView from 'primevue/tabview'
 import Tag from 'primevue/tag'
 import Textarea from 'primevue/textarea'
+import Timeline from 'primevue/timeline'
 import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import ToggleButton from 'primevue/togglebutton'
@@ -144,6 +145,7 @@ Vue.component('TabPanel', TabPanel)
 Vue.component('TabView', TabView)
 Vue.component('Tag', Tag)
 Vue.component('Textarea', Textarea)
+Vue.component('Timeline', Timeline)
 Vue.component('Toast', Toast)
 Vue.component('ToggleButton', ToggleButton)
 Vue.component('Toolbar', Toolbar)
