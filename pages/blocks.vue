@@ -27,5 +27,17 @@
     <div class="col-12">
       <BlockStateComponent />
     </div>
+
+    <div class="col-12">
+      <BlockSignInComponent />
+    </div>
+
+    <div class="col-12">
+      <BlockDescriptionListComponent />
+    </div>
+
+    <div class="col-12">
+      <BlockCardComponent />
+    </div>
   </div>
 </template>
