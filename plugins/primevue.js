@@ -4,6 +4,7 @@ import Ripple from 'primevue/ripple'
 import Tooltip from 'primevue/tooltip'
 import BadgeDirective from 'primevue/badgedirective'
 import StyleClass from 'primevue/styleclass'
+import 'prismjs/themes/prism-coy.css'
 
 import Accordion from 'primevue/accordion'
 import AccordionTab from 'primevue/accordiontab'
@@ -78,6 +79,7 @@ import ToggleButton from 'primevue/togglebutton'
 import Toolbar from 'primevue/toolbar'
 import Tree from 'primevue/tree'
 import TreeTable from 'primevue/treetable'
+import CodeHighlight from './AppCodeHighlight'
 
 Vue.component('Accordion', Accordion)
 Vue.component('AccordionTab', AccordionTab)
@@ -152,6 +154,7 @@ Vue.component('Toolbar', Toolbar)
 Vue.component('Tree', Tree)
 Vue.component('TreeTable', TreeTable)
 
+Vue.directive('code', CodeHighlight)
 Vue.directive('tooltip', Tooltip)
 Vue.directive('ripple', Ripple)
 Vue.directive('badge', BadgeDirective)
