@@ -22,11 +22,9 @@
       <div v-if="blockView == BlockView.PREVIEW" :class="containerClass" :style="previewStyle">
         <slot />
       </div>
-      <div v-if="blockView === BlockView.CODE">
-        <pre><code>{{ code }}
-
-</code></pre>
-      </div>
+      <Prism v-if="blockView === BlockView.CODE">
+        {{ code }}
+      </Prism>
     </div>
   </div>
 </template>
