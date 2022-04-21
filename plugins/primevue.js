@@ -4,7 +4,6 @@ import Ripple from 'primevue/ripple'
 import Tooltip from 'primevue/tooltip'
 import BadgeDirective from 'primevue/badgedirective'
 import StyleClass from 'primevue/styleclass'
-import 'prismjs/themes/prism-coy.css'
 
 import Accordion from 'primevue/accordion'
 import AccordionTab from 'primevue/accordiontab'

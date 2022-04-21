@@ -11,7 +11,7 @@
           <span>Code</span>
         </a>
         <a
-          v-tooltip.focus.bottom="{ value: 'Copied to clipboard' }"
+          v-tooltip.focus.top="{ value: 'Copied to clipboard' }"
           :tabindex="0"
           class="block-action-copy"
           @click="copyCode($event)"
@@ -22,9 +22,9 @@
       <div v-if="blockView == BlockView.PREVIEW" :class="containerClass" :style="previewStyle">
         <slot />
       </div>
-      <Prism v-if="blockView === BlockView.CODE">
-        {{ code }}
-      </Prism>
+      <div v-if="blockView === BlockView.CODE">
+        <pre v-code><code>{{ code }}</code></pre>
+      </div>
     </div>
   </div>
 </template>
