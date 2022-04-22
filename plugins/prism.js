@@ -1,7 +1,8 @@
+import Vue from 'vue'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism-coy.css'
 
-export default function (el, binding) {
+Vue.directive('code', function (el, binding) {
   const modifiers = binding.modifiers
   const value = binding.value
 
@@ -14,4 +15,4 @@ export default function (el, binding) {
   }
 
   Prism.highlightElement(el.children[0])
-}
+})
