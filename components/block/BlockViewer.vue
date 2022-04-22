@@ -19,11 +19,13 @@
       </div>
     </div>
     <div class="block-content">
-      <div v-if="blockView == BlockView.PREVIEW" :class="containerClass" :style="previewStyle">
-        <slot />
-      </div>
-      <div v-if="blockView === BlockView.CODE">
-        <pre v-code><code>{{ code }}</code></pre>
+      <div class="card">
+        <div v-if="blockView == BlockView.PREVIEW" :class="containerClass" :style="previewStyle">
+          <slot />
+        </div>
+        <div v-if="blockView === BlockView.CODE">
+          <pre v-code style="padding: 0"><code>{{ code }}</code></pre>
+        </div>
       </div>
     </div>
   </div>
@@ -76,8 +78,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card {
+  margin-bottom: 0em;
+  border-radius: 0%;
+}
+
 .block-section {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     overflow: hidden;
 }
 
@@ -180,7 +187,7 @@ pre[class*="language-"] {
         margin: 0;
         color: var(--text-color);
         font-size: 14px;
-        padding: 0 2rem !important;
+        padding: 0 1rem !important;
 
         .token {
             &.tag,
