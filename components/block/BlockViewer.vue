@@ -85,7 +85,6 @@ export default {
 
 .block-section {
     margin-bottom: 1rem;
-    overflow: hidden;
 }
 
 .block-header {
@@ -170,7 +169,6 @@ export default {
     border-top: 0 none;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    overflow: hidden;
 }
 
 pre[class*="language-"] {

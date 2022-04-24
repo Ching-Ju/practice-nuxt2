@@ -1,51 +1,51 @@
 <template>
   <div class="grid">
     <div class="col-12 md:col-6">
-      <input-text-component />
+      <InputTextComponent />
 
-      <input-icon-component />
+      <InputIconComponent />
 
-      <input-float-component />
+      <InputFloatComponent />
 
-      <input-textarea-component />
+      <InputTextareaComponent />
 
-      <input-calendar-component />
+      <InputCalendarComponent />
 
-      <input-number-component />
+      <InputNumberComponent />
 
-      <input-chip-component />
+      <InputChipComponent />
 
-      <input-slider-component />
+      <InputSliderComponent />
 
-      <input-rating-component />
+      <InputRatingComponent />
 
-      <input-color-picker-component />
+      <InputColorPickerComponent />
 
-      <input-knob-component />
+      <InputKnobComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <input-radio-button-component />
+      <InputRadioButtonComponent />
 
-      <input-checkbox-component />
+      <InputCheckboxComponent />
 
-      <input-switch-component />
+      <InputSwitchComponent />
 
-      <input-listbox-component />
+      <InputListboxComponent />
 
-      <input-dropdown-component />
+      <InputDropdownComponent />
 
-      <input-multi-select-component />
+      <InputMultiSelectComponent />
 
-      <input-toggle-button-component />
+      <InputToggleButtonComponent />
 
-      <input-select-button-component />
+      <InputSelectButtonComponent />
 
-      <input-select-button-multiple-component />
+      <InputSelectButtonMultipleComponent />
     </div>
 
     <div class="col-12">
-      <input-group-component />
+      <InputGroupComponent />
     </div>
   </div>
 </template>
