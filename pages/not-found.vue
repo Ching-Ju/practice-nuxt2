@@ -1,17 +1,9 @@
 <template>
-  <component :is="errorPage" />
+  <Error404 />
 </template>
 
 <script>
-import error404 from '~/components/error/404.vue'
-
 export default {
-  layout: 'empty',
-
-  computed: {
-    errorPage () {
-      return error404
-    }
-  }
+  layout: 'empty'
 }
 </script>

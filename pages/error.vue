@@ -1,17 +1,9 @@
 <template>
-  <component :is="errorPage" />
+  <Error500 />
 </template>
 
 <script>
-import error500 from '~/components/error/500.vue'
-
 export default {
-  layout: 'empty',
-
-  computed: {
-    errorPage () {
-      return error500
-    }
-  }
+  layout: 'empty'
 }
 </script>
