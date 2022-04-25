@@ -1,19 +1,19 @@
 <template>
   <div class="grid">
     <div class="col-12 md:col-6">
-      <button-default-component />
+      <ButtonDefaultComponent />
 
-      <button-group-component />
+      <ButtonGroupComponent />
 
-      <button-split-component />
+      <ButtonSplitComponent />
 
-      <button-templating-component />
+      <ButtonTemplatingComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <button-icon-component />
+      <ButtonIconComponent />
 
-      <button-loading-component />
+      <ButtonLoadingComponent />
     </div>
   </div>
 </template>

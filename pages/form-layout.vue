@@ -1,21 +1,21 @@
 <template>
   <div class="grid">
     <div class="col-12 md:col-6">
-      <form-layout-vertical-component />
+      <FormLayoutVerticalComponent />
 
-      <form-layout-vertical-grid-component />
+      <FormLayoutVerticalGridComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <form-layout-horizontal-component />
+      <FormLayoutHorizontalComponent />
 
-      <form-layout-inline-component />
+      <FormLayoutInlineComponent />
 
-      <form-layout-help-text-component />
+      <FormLayoutHelpTextComponent />
     </div>
 
     <div class="col-12">
-      <form-layout-advance-component />
+      <FormLayoutAdvanceComponent />
     </div>
   </div>
 </template>
