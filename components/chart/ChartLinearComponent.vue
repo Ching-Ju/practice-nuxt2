@@ -1,9 +1,7 @@
 <template>
-  <card-style2-component card-title="Linear Chart">
-    <template #cardBody>
-      <Chart type="line" :data="lineData" :options="$store.getters['appState/lineOptions']" />
-    </template>
-  </card-style2-component>
+  <BlockViewer header="Linear Chart [type='line']" :code="code">
+    <Chart type="line" :data="lineData" :options="$store.getters['appState/lineOptions']" />
+  </BlockViewer>
 </template>
 
 <script setup>
@@ -28,4 +26,6 @@ const lineData = {
     }
   ]
 }
+
+const code = '<Chart type="line" :data="lineData" :options="$store.getters[\'appState/lineOptions\']" />'
 </script>

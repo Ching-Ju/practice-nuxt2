@@ -1,19 +1,19 @@
 <template>
   <div class="grid">
     <div class="col-12 md:col-6">
-      <chart-linear-component />
+      <ChartLinearComponent />
 
-      <chart-pie-component />
+      <ChartPieComponent />
 
-      <chart-polar-area-component />
+      <ChartPolarAreaComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <chart-bar-component />
+      <ChartBarComponent />
 
-      <chart-doughnut-component />
+      <ChartDoughnutComponent />
 
-      <chart-radar-component />
+      <ChartRadarComponent />
     </div>
   </div>
 </template>

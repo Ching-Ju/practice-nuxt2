@@ -1,9 +1,7 @@
 <template>
-  <card-style2-component card-title="Bar Chart">
-    <template #cardBody>
-      <Chart type="bar" :data="barData" :options="$store.getters['appState/barOptions']" />
-    </template>
-  </card-style2-component>
+  <BlockViewer header="Bar Chart [type='bar']" :code="code">
+    <Chart type="bar" :data="barData" :options="$store.getters['appState/barOptions']" />
+  </BlockViewer>
 </template>
 
 <script setup>
@@ -22,4 +20,6 @@ const barData = {
     }
   ]
 }
+
+const code = '<Chart type="bar" :data="barData" :options="$store.getters[\'appState/barOptions\']" />'
 </script>

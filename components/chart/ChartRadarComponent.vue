@@ -1,11 +1,9 @@
 <template>
-  <card-style2-component card-title="Radar Chart">
-    <template #cardBody>
-      <div class="flex flex-column align-items-center">
-        <Chart type="radar" :data="radarData" :options="$store.getters['appState/radarOptions']" style="width: 50%" />
-      </div>
-    </template>
-  </card-style2-component>
+  <BlockViewer header="Radar Chart [type='radar']" :code="code">
+    <div class="flex flex-column align-items-center">
+      <Chart type="radar" :data="radarData" :options="$store.getters['appState/radarOptions']" style="width: 50%" />
+    </div>
+  </BlockViewer>
 </template>
 
 <script setup>
@@ -34,4 +32,8 @@ const radarData = {
     }
   ]
 }
+
+const code = `<div class="flex flex-column align-items-center">
+  <Chart type="radar" :data="radarData" :options="$store.getters['appState/radarOptions']" style="width: 50%" />
+</div>`
 </script>
