@@ -1,9 +1,9 @@
 <template>
   <div class="grid">
     <div class="col-12">
-      <file-advance-component />
+      <FileAdvanceComponent />
 
-      <file-basic-component />
+      <FileBasicComponent />
     </div>
   </div>
 </template>
