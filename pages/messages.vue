@@ -1,19 +1,19 @@
 <template>
   <div class="grid">
     <div class="col-12 md:col-6">
-      <message-toast-component />
+      <MessageToastComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <message-component />
+      <MessageComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <message-inline-component />
+      <MessageInlineComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <message-help-text-component />
+      <MessageHelpTextComponent />
     </div>
   </div>
 </template>
