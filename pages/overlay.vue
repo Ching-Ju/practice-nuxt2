@@ -1,19 +1,19 @@
 <template>
   <div class="grid">
     <div class="col-12 md:col-6">
-      <overlay-dialog-component />
+      <OverlayDialogComponent />
 
-      <overlay-panel-component />
+      <OverlayDialogComponent />
 
-      <overlay-tooltip-component />
+      <OverlayTooltipComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <overlay-confirmation-component />
+      <OverlayConfirmationComponent />
 
-      <overlay-sidebar-component />
+      <OverlaySidebarComponent />
 
-      <overlay-confirm-popup-component />
+      <OverlayConfirmPopupComponent />
     </div>
   </div>
 </template>
