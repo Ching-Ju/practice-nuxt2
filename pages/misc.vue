@@ -1,23 +1,23 @@
 <template>
   <div class="grid">
     <div class="col-12">
-      <misc-progress-bar-component />
+      <MiscProgressBarComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <misc-badge-component />
+      <MiscBadgeComponent />
 
-      <misc-avatar-component />
+      <MiscAvatarComponent />
 
-      <misc-scroll-top-component />
+      <MiscScrollTopComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <misc-tag-component />
+      <MiscTagComponent />
 
-      <misc-chip-component />
+      <MiscChipComponent />
 
-      <misc-skeleton-component />
+      <MiscSkeletonComponent />
     </div>
   </div>
 </template>
