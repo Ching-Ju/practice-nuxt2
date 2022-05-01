@@ -1,11 +1,11 @@
 <template>
   <div class="grid">
     <div class="col-12">
-      <tree-component />
+      <TreeComponent />
     </div>
 
     <div class="col-12">
-      <tree-table-component />
+      <TreeTableComponent />
     </div>
   </div>
 </template>
