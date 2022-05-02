@@ -1,29 +1,29 @@
 <template>
   <div class="grid">
     <div class="col-12">
-      <panel-toolbar-component />
+      <PanelToolbarComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <panel-accordion-component />
+      <PanelAccordionComponent />
 
-      <panel-tab-view-component />
+      <PanelTabViewComponent />
     </div>
 
     <div class="col-12 md:col-6">
-      <panel-component />
+      <PanelComponent />
 
-      <panel-fieldset-component />
+      <PanelFieldsetComponent />
 
-      <panel-card-component />
+      <PanelCardComponent />
     </div>
 
     <div class="col-12">
-      <panel-divider-component />
+      <PanelDividerComponent />
     </div>
 
     <div class="col-12">
-      <panel-splitter-component />
+      <PanelSplitterComponent />
     </div>
   </div>
 </template>
