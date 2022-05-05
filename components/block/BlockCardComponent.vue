@@ -1,15 +1,25 @@
 <template>
-  <CardStyle2Component card-title="Card">
-    <template #cardBody>
-      <div class="surface-card p-4 shadow-2 border-round">
-        <div class="text-3xl font-medium text-900 mb-3">
-          Card Title
-        </div>
-        <div class="font-medium text-500 mb-3">
-          Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.
-        </div>
-        <div style="height: 150px" class="border-2 border-dashed surface-border" />
+  <BlockViewer header="Card" :code="code">
+    <div class="surface-card p-4 shadow-2 border-round">
+      <div class="text-3xl font-medium text-900 mb-3">
+        Card Title
       </div>
-    </template>
-  </CardStyle2Component>
+      <div class="font-medium text-500 mb-3">
+        Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.
+      </div>
+      <div style="height: 150px" class="border-2 border-dashed surface-border" />
+    </div>
+  </BlockViewer>
 </template>
+
+<script setup>
+const code = `<div class="surface-card p-4 shadow-2 border-round">
+  <div class="text-3xl font-medium text-900 mb-3">
+    Card Title
+  </div>
+  <div class="font-medium text-500 mb-3">
+    Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.
+  </div>
+  <div style="height: 150px" class="border-2 border-dashed surface-border" />
+</div>`
+</script>
