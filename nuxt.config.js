@@ -35,6 +35,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/prism.js',
+    '~/plugins/leaflet.js',
     '~/plugins/primevue.js',
     '~/plugins/utils.js'
   ],
@@ -59,7 +60,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://dev.auth.nuxtjs.org/
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    // https://github.com/schlunsen/nuxt-leaflet
+    'nuxt-leaflet'
   ],
 
   auth: {

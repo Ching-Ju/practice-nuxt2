@@ -56,7 +56,8 @@ export default {
             { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages' },
             { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
             { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
-            { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' }
+            { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+            { label: 'Map', icon: 'pi pi-fw pi-map', to: '/map' }
           ]
         },
         {
