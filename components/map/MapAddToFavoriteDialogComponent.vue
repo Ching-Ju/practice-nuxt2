@@ -8,7 +8,7 @@
   >
     <div class="flex align-items-center justify-content-center">
       <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
-      <span>Are you sure you want to proceed?</span>
+      <span>{{ detail }}</span>
     </div>
 
     <template #footer>
@@ -19,7 +19,17 @@
 </template>
 
 <script setup>
-import { ref } from '@nuxtjs/composition-api'
+import { ref, defineExpose } from '@nuxtjs/composition-api'
 
 const addToFavoriteDialog = ref(false)
+const detail = ref(null)
+
+function showAddToFavorite (marker) {
+  addToFavoriteDialog.value = true
+  detail.value = marker.name
+}
+
+defineExpose({
+  showAddToFavorite
+})
 </script>
