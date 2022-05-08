@@ -2,7 +2,7 @@
   <Dialog
     :visible.sync="showDetailDialog"
     header="Detail"
-    :style="{ width: '350px' }"
+    :style="{ width: `${(windowWidth * 7) / 8}px`, 'max-width': '700px' }"
     :modal="true"
     :dismissable-mask="true"
   >
@@ -12,16 +12,24 @@
     </div>
 
     <template #footer>
-      <Button label="Close" icon="pi pi-times" class="p-button-text" autofocus @click="showDetailDialog = false" />
+      <Button
+        label="Close"
+        icon="pi pi-times"
+        class="p-button-text"
+        autofocus
+        @click="showDetailDialog = false"
+      />
     </template>
   </Dialog>
 </template>
 
 <script setup>
 import { ref, defineExpose } from '@nuxtjs/composition-api'
+import useWindow from '@/composables/useWindow'
 
 const showDetailDialog = ref(false)
 const detail = ref(null)
+const { windowWidth } = useWindow()
 
 function showDetail (marker) {
   showDetailDialog.value = true

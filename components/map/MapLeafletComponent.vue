@@ -19,7 +19,7 @@
               <l-icon :icon-size="[40, 40]" :icon-url="$_r('/images/primevue-logo.svg')" />
 
               <l-popup>
-                Marker{{ index }}
+                {{ marker.name }}
               </l-popup>
             </l-marker>
           </v-marker-cluster>
