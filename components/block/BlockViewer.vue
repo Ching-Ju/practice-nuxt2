@@ -20,10 +20,10 @@
     </div>
     <div class="block-content">
       <div class="card">
-        <div v-if="blockView == BlockView.PREVIEW" :class="containerClass" :style="previewStyle">
+        <div v-show="blockView == BlockView.PREVIEW" :class="containerClass" :style="previewStyle">
           <slot />
         </div>
-        <div v-if="blockView === BlockView.CODE">
+        <div v-show="blockView === BlockView.CODE">
           <pre v-code style="padding: 0"><code>{{ code }}</code></pre>
         </div>
       </div>
