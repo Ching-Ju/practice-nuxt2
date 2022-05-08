@@ -24,6 +24,7 @@
     "primeicons": "^5.0.0",
     "primevue": "^2.7.0",
     "prismjs": "^1.28.0",
+    "video.js": "^7.18.1",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",

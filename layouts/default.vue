@@ -57,7 +57,8 @@ export default {
             { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
             { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
             { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
-            { label: 'Map', icon: 'pi pi-fw pi-map', to: '/map' }
+            { label: 'Map', icon: 'pi pi-fw pi-map', to: '/map' },
+            { label: 'Video', icon: 'pi pi-fw pi-video', to: '/video' }
           ]
         },
         {
