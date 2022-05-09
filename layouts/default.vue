@@ -58,7 +58,8 @@ export default {
             { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
             { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
             { label: 'Map', icon: 'pi pi-fw pi-map', to: '/map' },
-            { label: 'Video', icon: 'pi pi-fw pi-video', to: '/video' }
+            { label: 'Video', icon: 'pi pi-fw pi-video', to: '/video' },
+            { label: 'Credit Card', icon: 'pi pi-fw pi-credit-card', to: '/credit-card' }
           ]
         },
         {
