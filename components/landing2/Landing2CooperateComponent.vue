@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="col-12 text-center">
-      <h1 v-animate:animate__rubberBand="100">
+      <h1 v-animate:animate__rubberBand="100" class="title-style">
         Cooperates
       </h1>
     </div>
@@ -20,3 +20,11 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.title-style {
+  background: -webkit-linear-gradient(#a86800, #efca72);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>

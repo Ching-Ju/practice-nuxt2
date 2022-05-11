@@ -3,6 +3,7 @@ import Vue from 'vue'
 Vue.directive('animate', function (el, binding) {
   el.classList.add('animate__animated')
   window.addEventListener('scroll', scroll)
+  scroll()
 
   function scroll () {
     const clientHeight = document.documentElement.clientHeight

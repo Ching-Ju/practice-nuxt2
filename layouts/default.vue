@@ -83,6 +83,7 @@ export default {
             { label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud' },
             { label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline' },
             { label: 'Landing', icon: 'pi pi-fw pi-globe', to: '/landing' },
+            { label: 'Landing2', icon: 'pi pi-fw pi-globe', to: '/landing2' },
             { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
             { label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error' },
             { label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/not-found' },
