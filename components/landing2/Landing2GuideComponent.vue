@@ -10,7 +10,7 @@
         indicators-content-class="hidden"
       >
         <template #item="product">
-          <img :src="`/images/product/${product.data.image}`" :alt="product.data.name" class="w-full">
+          <img :src="$_r(`/images/product/${product.data.image}`)" :alt="product.data.name" class="w-full">
         </template>
       </Carousel>
     </div>

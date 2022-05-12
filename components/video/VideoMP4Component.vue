@@ -9,7 +9,7 @@
       data-setup="{}"
       style="width: 100%; height: 100vh; object-fit: fill;"
     >
-      <source src="/videos/mov_bbb.mp4" type="video/mp4">
+      <source :src="$_r('/videos/mov_bbb.mp4')" type="video/mp4">
     </video>
   </BlockViewer>
 </template>
