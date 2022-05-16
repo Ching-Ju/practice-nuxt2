@@ -2,7 +2,7 @@
   <div class="grid">
     <div class="col-12 text-center">
       <h1 v-animate:animate__rubberBand="100" class="title-style">
-        Steps
+        {{ $t('Steps') }}
       </h1>
     </div>
 

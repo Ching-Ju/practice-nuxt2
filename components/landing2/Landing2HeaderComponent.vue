@@ -14,15 +14,39 @@
 
     <div>
       <Dropdown
-        :options="$store.state.product.products"
-        option-label="name"
-        option-value="code"
+        v-model="locale"
+        :options="$i18n.localeCodes"
         placeholder="Select a City"
         class="round-dropdown"
-      />
+      >
+        <template #value>
+          <ImagePreview :src="$_r(`/images/country/${locale}.png`)" :alt="locale" />
+        </template>
+
+        <template #option="slotProps">
+          <ImagePreview :src="$_r(`/images/country/${slotProps.option}.png`)" :alt="slotProps.option" />
+          {{ slotProps.option }}
+        </template>
+      </Dropdown>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      locale: this.$i18n.defaultLocale
+    }
+  },
+
+  watch: {
+    locale () {
+      this.$i18n.setLocale(this.locale)
+    }
+  }
+}
+</script>
 
 <style scoped>
 .round-dropdown {

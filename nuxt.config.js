@@ -64,6 +64,8 @@ export default {
     '@nuxtjs/axios',
     // https://dev.auth.nuxtjs.org/
     '@nuxtjs/auth-next',
+    // https://i18n.nuxtjs.org/
+    '@nuxtjs/i18n',
     // https://github.com/schlunsen/nuxt-leaflet
     'nuxt-leaflet'
   ],
@@ -98,6 +100,25 @@ export default {
     },
 
     plugins: ['~/plugins/axios']
+  },
+
+  i18n: {
+    defaultLocale: 'zh_TW',
+    strategy: 'no_prefix',
+    locales: [
+      {
+        code: 'en'
+      },
+      {
+        code: 'zh_TW'
+      }
+    ],
+    vueI18n: {
+      messages: {
+        en: Object.assign({}, require('./locales/en.json'), { user: require('./locales/en/user.json') }),
+        zh_TW: Object.assign({}, require('./locales/zh_TW.json'), { user: require('./locales/zh_TW/user.json') })
+      }
+    }
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

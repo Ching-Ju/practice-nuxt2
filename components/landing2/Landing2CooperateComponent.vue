@@ -2,7 +2,7 @@
   <div>
     <div class="col-12 text-center">
       <h1 v-animate:animate__rubberBand="100" class="title-style">
-        Cooperates
+        {{ $t('Cooperates') }}
       </h1>
     </div>
 
