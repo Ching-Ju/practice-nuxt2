@@ -60,6 +60,8 @@ export default {
   modules: [
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
     'primevue/nuxt',
+    // https://content.nuxtjs.org/
+    '@nuxt/content',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://dev.auth.nuxtjs.org/
