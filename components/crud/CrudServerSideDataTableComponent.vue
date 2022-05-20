@@ -1,58 +1,93 @@
 <template>
   <BlockViewer header="Crud Server Side Data Table" :code="code">
-    <Toolbar class="mb-4">
-      <template #start>
-        <div class="my-2">
-          <Button label="New" icon="pi pi-plus" class="p-button-success mr-2" />
-          <Button label="Delete" icon="pi pi-trash" class="p-button-danger" />
-        </div>
-      </template>
-
-      <template #end>
-        <CrudDataTableImportButtonComponent />
-
-        <CrudDataTableExportButtonComponent />
-      </template>
-    </Toolbar>
-
-    <DataTable
-      responsive-layout="scroll"
-      :value="$store.state.product.products"
-      :loading="loading"
-      :paginator="true"
-      :rows="rows"
-      :rows-per-page-options="rowsPerPageOptions"
-    >
-      <template #header>
-        <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
-          <h5 class="m-0">
-            Products
-          </h5>
-          <span class="block mt-2 md:mt-0 p-input-icon-left">
-            <i class="pi pi-search" />
-            <InputText v-model="filter" placeholder="Search..." />
-          </span>
-        </div>
-      </template>
-
-      <Column field="code" header="Code" export-header="Product Code" />
-      <Column field="name" header="Name" />
-      <Column field="category" header="Category" />
-      <Column field="quantity" header="Quantity" />
-
-      <Column header-style="min-width:10rem;">
-        <template #body="slotProps">
-          <CrudDataTableEditButtonComponent @click="editItem(slotProps.data)" />
-          <CrudDataTableDeleteButtonComponent @click="deleteItem(slotProps.data)" />
+    <div v-if="error">
+      <CrudDataTableErrorComponent :error="error" />
+    </div>
+    <div v-else>
+      <Toolbar class="mb-4">
+        <template #start>
+          <div class="my-2">
+            <Button label="New" icon="pi pi-plus" class="p-button-success mr-2" />
+            <Button label="Delete" icon="pi pi-trash" class="p-button-danger" />
+          </div>
         </template>
-      </Column>
-    </DataTable>
+
+        <template #end>
+          <CrudDataTableImportButtonComponent />
+          <CrudDataTableExportButtonComponent />
+        </template>
+      </Toolbar>
+
+      <DataTable
+        responsive-layout="scroll"
+        :value="items"
+        :loading="loading"
+        :lazy="true"
+        :paginator="true"
+        :rows="dataTableParameter.rows"
+        :rows-per-page-options="rowsPerPageOptions"
+        :total-records="totalRecords"
+        @page="onPage($event)"
+        @sort="onSort($event)"
+      >
+        <template #empty>
+          <CrudDataTableErrorComponent />
+        </template>
+
+        <template #header>
+          <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+            <h5 class="m-0">
+              Users
+            </h5>
+            <span class="block mt-2 md:mt-0 p-input-icon-left">
+              <i class="pi pi-search" />
+              <InputText v-model="filter" placeholder="Search..." />
+            </span>
+          </div>
+        </template>
+
+        <Column :sortable="true" field="id" header="Id" />
+        <Column :sortable="true" field="name" header="Name" />
+        <Column :sortable="true" field="email" header="Email" />
+        <Column :sortable="true" field="created_at" header="Created At" />
+        <Column :sortable="true" field="updated_at" header="Updated At" />
+
+        <Column header-style="min-width:10rem;">
+          <template #body="slotProps">
+            <CrudDataTableEditButtonComponent @button-click="editItem(slotProps.data.id); setEditItemIndex(findIndex(items, {id: slotProps.data.id}));" />
+            <CrudDataTableDeleteButtonComponent @button-click="setEditItemIndex(findIndex(items, {id: slotProps.data.id})); $refs.deleteDialog.openDialog();" />
+          </template>
+        </Column>
+      </DataTable>
+
+      <CrudDeleteConfirmationDialogComponent ref="deleteDialog" @confirm-delete="onDelete" />
+    </div>
   </BlockViewer>
 </template>
 
 <script setup>
+import findIndex from 'lodash/findIndex'
 import useDataTableServerSideComposable from '~/composables/useDataTableServerSideComposable'
 
 const code = ''
-const { filter, loading, rows, rowsPerPageOptions, editItem, deleteItem } = useDataTableServerSideComposable()
+
+const {
+  dataTableParameter,
+  error,
+  filter,
+  items,
+  loading,
+  rowsPerPageOptions,
+  totalRecords,
+  editItem,
+  getItems,
+  onDelete,
+  onPage,
+  onSort,
+  setApiUrl,
+  setEditItemIndex
+} = useDataTableServerSideComposable()
+
+setApiUrl('/api/users')
+getItems()
 </script>
