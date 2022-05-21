@@ -1,23 +1,40 @@
 import { ref, useContext } from '@nuxtjs/composition-api'
+import findIndex from 'lodash/findIndex'
 import useItemComposable from '~/composables/useItemComposable'
 
 export default function () {
   const { items, deleteItem, setItem, setItems } = useItemComposable()
   const apiFetch = useContext().$apiFetch
   const apiUrl = ref(null)
+  const dialog = ref(false)
+  const dialogDelete = ref(false)
+  const id = ref('id')
   const dataTableParameter = ref({
     page: 1,
     first: 0,
     rows: 15,
-    sortField: 'id',
+    sortField: id.value,
     sortOrder: 1
   })
-  const editedItemIndex = ref(-1)
+  const editedIndex = ref(-1)
   const error = ref(null)
   const filter = ref(null)
   const loading = ref(false)
   const rowsPerPageOptions = ref([15, 30, 50])
   const totalRecords = ref(null)
+
+  async function deleteConfirm () {
+    loading.value = true
+
+    await apiFetch.$delete(`${apiUrl.value}/${items.value[editedIndex.value][id.value]}`)
+      .then((response) => {
+        deleteItem(editedIndex.value)
+      }).catch((e) => {
+        error.value = e
+      })
+
+    loading.value = false
+  }
 
   async function getItem (itemId) {
     loading.value = true
@@ -50,26 +67,21 @@ export default function () {
     apiUrl.value = value
   }
 
-  function setEditItemIndex (value) {
-    editedItemIndex.value = value
+  function setEditedIndex (item) {
+    editedIndex.value = findIndex(items.value, { [id.value]: item[id.value] })
+  }
+
+  function setId (value) {
+    id.value = value
   }
 
   function storeItem () {
 
   }
 
-  function onDelete () {
-    loading.value = true
-
-    // await apiFetch.$delete(apiUrl.value)
-    //   .then((response) => {
-
-    //   }).catch((e) => {
-    //     error.value = e
-    //   })
-    deleteItem(editedItemIndex.value)
-
-    loading.value = false
+  function onDelete (item) {
+    dialogDelete.value = true
+    setEditedIndex(item)
   }
 
   async function editItem (itemId) {
@@ -94,19 +106,22 @@ export default function () {
 
   return {
     dataTableParameter,
+    dialog,
+    dialogDelete,
     error,
     filter,
     items,
     loading,
     rowsPerPageOptions,
     totalRecords,
-    onDelete,
+    deleteConfirm,
     editItem,
     getItems,
+    onDelete,
     onPage,
     onSort,
     setApiUrl,
-    setEditItemIndex,
+    setId,
     setDataTableParameter,
     showItem,
     storeItem

@@ -54,38 +54,38 @@
 
         <Column header-style="min-width:10rem;">
           <template #body="slotProps">
-            <CrudDataTableEditButtonComponent @button-click="editItem(slotProps.data.id); setEditItemIndex(findIndex(items, {id: slotProps.data.id}));" />
-            <CrudDataTableDeleteButtonComponent @button-click="setEditItemIndex(findIndex(items, {id: slotProps.data.id})); $refs.deleteDialog.openDialog();" />
+            <CrudDataTableEditButtonComponent @button-click="editItem(slotProps.data.id);" />
+            <CrudDataTableDeleteButtonComponent @button-click="onDelete(slotProps.data)" />
           </template>
         </Column>
       </DataTable>
 
-      <CrudDeleteConfirmationDialogComponent ref="deleteDialog" @confirm-delete="onDelete" />
+      <CrudDeleteConfirmationDialogComponent :dialog-delete="dialogDelete" @update:display="dialogDelete = $event" @delete-confirm="deleteConfirm" />
     </div>
   </BlockViewer>
 </template>
 
 <script setup>
-import findIndex from 'lodash/findIndex'
 import useDataTableServerSideComposable from '~/composables/useDataTableServerSideComposable'
 
 const code = ''
 
 const {
   dataTableParameter,
+  dialogDelete,
   error,
   filter,
   items,
   loading,
   rowsPerPageOptions,
   totalRecords,
+  deleteConfirm,
   editItem,
   getItems,
   onDelete,
   onPage,
   onSort,
-  setApiUrl,
-  setEditItemIndex
+  setApiUrl
 } = useDataTableServerSideComposable()
 
 setApiUrl('/api/users')

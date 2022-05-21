@@ -6,22 +6,22 @@
     </div>
 
     <template #footer>
-      <Button label="No" icon="pi pi-times" class="p-button-text" @click="display = false" />
-      <Button label="Yes" icon="pi pi-check" class="p-button-text" autofocus @click="display = false; $emit('confirm-delete')" />
+      <Button label="No" icon="pi pi-times" class="p-button-text" @click="$emit('update:display', false)" />
+      <Button label="Yes" icon="pi pi-check" class="p-button-text" autofocus @click="$emit('update:display', false); $emit('delete-confirm')" />
     </template>
   </Dialog>
 </template>
 
 <script setup>
-import { ref, defineExpose } from '@nuxtjs/composition-api'
+import { defineProps, computed } from '@nuxtjs/composition-api'
 
-const display = ref(false)
-
-function openDialog () {
-  display.value = true
-}
-
-defineExpose({
-  openDialog
+const props = defineProps({
+  dialogDelete: {
+    default: false,
+    required: true,
+    type: Boolean
+  }
 })
+
+const display = computed(() => { return props.dialogDelete })
 </script>
