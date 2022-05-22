@@ -6,15 +6,16 @@
     </div>
 
     <template #footer>
-      <Button label="No" icon="pi pi-times" class="p-button-text" @click="$emit('update:display', false)" />
-      <Button label="Yes" icon="pi pi-check" class="p-button-text" autofocus @click="$emit('update:display', false); $emit('delete-confirm')" />
+      <Button label="No" icon="pi pi-times" class="p-button-text" @click="display = false" />
+      <Button label="Yes" icon="pi pi-check" class="p-button-text" autofocus @click="display = false; $emit('delete-confirm')" />
     </template>
   </Dialog>
 </template>
 
 <script setup>
-import { defineProps, computed } from '@nuxtjs/composition-api'
+import { computed, defineEmits, defineProps } from '@nuxtjs/composition-api'
 
+const emit = defineEmits()
 const props = defineProps({
   dialogDelete: {
     default: false,
@@ -23,5 +24,12 @@ const props = defineProps({
   }
 })
 
-const display = computed(() => { return props.dialogDelete })
+const display = computed({
+  get () {
+    return props.dialogDelete
+  },
+  set (value) {
+    emit('update:dialogDelete', value)
+  }
+})
 </script>

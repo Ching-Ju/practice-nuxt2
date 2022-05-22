@@ -60,7 +60,7 @@
         </Column>
       </DataTable>
 
-      <CrudDeleteConfirmationDialogComponent :dialog-delete="dialogDelete" @update:display="dialogDelete = $event" @delete-confirm="deleteConfirm" />
+      <CrudDeleteConfirmationDialogComponent :dialog-delete.sync="dialogDelete" @delete-confirm="deleteConfirm" />
     </div>
   </BlockViewer>
 </template>
