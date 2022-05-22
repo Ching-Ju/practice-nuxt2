@@ -1,9 +1,9 @@
-import { ref, useContext } from '@nuxtjs/composition-api'
+import { ref, useContext, watch } from '@nuxtjs/composition-api'
 import findIndex from 'lodash/findIndex'
 import useItemComposable from '~/composables/useItemComposable'
 
 export default function () {
-  const { items, deleteItem, setItem, setItems } = useItemComposable()
+  const { item, items, createItem, deleteItem, setItem, setItems } = useItemComposable()
   const apiFetch = useContext().$apiFetch
   const apiUrl = ref(null)
   const dialog = ref(false)
@@ -23,6 +23,11 @@ export default function () {
   const rowsPerPageOptions = ref([15, 30, 50])
   const totalRecords = ref(null)
 
+  function closeDialog () {
+    dialog.value = false
+    setItem({})
+  }
+
   async function deleteConfirm () {
     loading.value = true
 
@@ -36,10 +41,15 @@ export default function () {
     loading.value = false
   }
 
-  async function getItem (itemId) {
+  function editItem () {
+    console.log('edit :>> ')
+    closeDialog()
+  }
+
+  async function getItem () {
     loading.value = true
 
-    await apiFetch.$get(`${apiUrl.value}/${itemId}`)
+    await apiFetch.$get(`${apiUrl.value}/${items.value[editedIndex.value][id.value]}`)
       .then((response) => {
         setItem(response.data)
       }).catch((e) => {
@@ -67,32 +77,55 @@ export default function () {
     apiUrl.value = value
   }
 
-  function setEditedIndex (item) {
-    editedIndex.value = findIndex(items.value, { [id.value]: item[id.value] })
+  function setEditedIndex (value) {
+    editedIndex.value = value
   }
 
   function setId (value) {
     id.value = value
   }
 
-  function storeItem () {
+  async function storeItem () {
+    loading.value = true
 
+    await apiFetch.$post(apiUrl.value, item.value)
+      .then((response) => {
+        createItem(response.data)
+        closeDialog()
+      }).catch((e) => {
+        error.value = e
+      })
+
+    loading.value = false
+  }
+
+  function onCreate () {
+    setEditedIndex(-1)
+    dialog.value = true
   }
 
   function onDelete (item) {
+    setEditedIndex(findIndex(items.value, { [id.value]: item[id.value] }))
     dialogDelete.value = true
-    setEditedIndex(item)
   }
 
-  async function editItem (itemId) {
-    await getItem(itemId)
+  async function onEdit (item) {
+    setEditedIndex(findIndex(items.value, { [id.value]: item[id.value] }))
+    await getItem()
+    dialog.value = true
   }
-
-  function showItem (item) {}
 
   function onPage (value) {
     value.page++
     setDataTableParameter(value)
+  }
+
+  function onSave () {
+    if (editedIndex.value < 0) {
+      storeItem()
+    } else {
+      editItem()
+    }
   }
 
   function onSort (value) {
@@ -104,26 +137,31 @@ export default function () {
     getItems()
   }
 
+  watch(dialog, (value) => {
+    value || closeDialog()
+  })
+
   return {
     dataTableParameter,
     dialog,
     dialogDelete,
     error,
     filter,
+    item,
     items,
     loading,
     rowsPerPageOptions,
     totalRecords,
     deleteConfirm,
-    editItem,
     getItems,
+    onCreate,
     onDelete,
+    onEdit,
     onPage,
+    onSave,
     onSort,
     setApiUrl,
     setId,
-    setDataTableParameter,
-    showItem,
     storeItem
   }
 }

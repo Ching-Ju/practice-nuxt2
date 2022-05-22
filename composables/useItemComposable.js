@@ -1,7 +1,7 @@
 import { ref } from '@nuxtjs/composition-api'
 
 export default function () {
-  const item = ref([])
+  const item = ref({})
   const items = ref([])
 
   function createItem (item) {

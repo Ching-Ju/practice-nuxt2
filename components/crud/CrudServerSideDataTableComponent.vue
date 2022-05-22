@@ -7,7 +7,7 @@
       <Toolbar class="mb-4">
         <template #start>
           <div class="my-2">
-            <Button label="New" icon="pi pi-plus" class="p-button-success mr-2" />
+            <CrudDataTableCreateButtonComponent @button-click="onCreate();" />
             <Button label="Delete" icon="pi pi-trash" class="p-button-danger" />
           </div>
         </template>
@@ -54,12 +54,13 @@
 
         <Column header-style="min-width:10rem;">
           <template #body="slotProps">
-            <CrudDataTableEditButtonComponent @button-click="editItem(slotProps.data.id);" />
+            <CrudDataTableEditButtonComponent @button-click="onEdit(slotProps.data);" />
             <CrudDataTableDeleteButtonComponent @button-click="onDelete(slotProps.data)" />
           </template>
         </Column>
       </DataTable>
 
+      <CrudFormDialogComponent :dialog.sync="dialog" :item.sync="item" @save="onSave" />
       <CrudDeleteConfirmationDialogComponent :dialog-delete.sync="dialogDelete" @delete-confirm="deleteConfirm" />
     </div>
   </BlockViewer>
@@ -72,18 +73,22 @@ const code = ''
 
 const {
   dataTableParameter,
+  dialog,
   dialogDelete,
   error,
   filter,
+  item,
   items,
   loading,
   rowsPerPageOptions,
   totalRecords,
   deleteConfirm,
-  editItem,
   getItems,
+  onCreate,
   onDelete,
+  onEdit,
   onPage,
+  onSave,
   onSort,
   setApiUrl
 } = useDataTableServerSideComposable()
