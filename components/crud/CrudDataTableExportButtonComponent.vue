@@ -1,3 +1,3 @@
 <template>
-  <Button label="Export" icon="pi pi-upload" class="p-button-help" />
+  <Button label="Export" icon="pi pi-download" class="p-button-help" />
 </template>

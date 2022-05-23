@@ -7,13 +7,21 @@
       </div>
 
       <div class="field">
-        <label>Name (*)</label>
-        <InputText v-model="form.name" type="text" :readonly="props.readonly" />
+        <label>Name <b class="p-error">(*)</b></label>
+        <InputText v-model="form.name" type="text" :readonly="props.readonly" :class="{'p-invalid': errors.name}" />
+        <small v-if="errors.name" class="p-error">{{ errors.name[0] }}</small>
       </div>
 
       <div class="field">
-        <label>Email (*)</label>
-        <InputText v-model="form.email" type="email" :readonly="props.readonly" />
+        <label>Email <b class="p-error">(*)</b></label>
+        <InputText v-model="form.email" type="email" :readonly="props.readonly" :class="{'p-invalid': errors.email}" />
+        <small v-if="errors.email" class="p-error">{{ errors.email[0] }}</small>
+      </div>
+
+      <div v-if="!readonly" class="field">
+        <label>Password <b v-if="!props.item.id" class="p-error">(*)</b></label>
+        <InputText v-model="form.password" type="password" :readonly="props.readonly" :class="{'p-invalid': errors.password}" />
+        <small v-if="errors.password" class="p-error">{{ errors.password[0] }}</small>
       </div>
 
       <div v-if="form.id" class="field">
@@ -50,6 +58,11 @@ const props = defineProps({
     default: false,
     required: true,
     type: Boolean
+  },
+  errors: {
+    default: () => {},
+    required: true,
+    type: Object
   },
   item: {
     default: () => {},

@@ -8,7 +8,6 @@
         <template #start>
           <div class="my-2">
             <CrudDataTableCreateButtonComponent @button-click="onCreate();" />
-            <Button label="Delete" icon="pi pi-trash" class="p-button-danger" />
           </div>
         </template>
 
@@ -39,10 +38,7 @@
             <h5 class="m-0">
               Users
             </h5>
-            <span class="block mt-2 md:mt-0 p-input-icon-left">
-              <i class="pi pi-search" />
-              <InputText v-model="filter" placeholder="Search..." />
-            </span>
+            <CrudDataTableInputSearchComponent :filter.sync="filter" />
           </div>
         </template>
 
@@ -60,7 +56,7 @@
         </Column>
       </DataTable>
 
-      <CrudFormDialogComponent :dialog.sync="dialog" :item.sync="item" @save="onSave" />
+      <CrudFormDialogComponent :dialog.sync="dialog" :errors="errors" :item.sync="item" @save="onSave" />
       <CrudDeleteConfirmationDialogComponent :dialog-delete.sync="dialogDelete" @delete-confirm="deleteConfirm" />
     </div>
   </BlockViewer>
@@ -76,6 +72,7 @@ const {
   dialog,
   dialogDelete,
   error,
+  errors,
   filter,
   item,
   items,

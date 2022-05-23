@@ -3,7 +3,7 @@ import findIndex from 'lodash/findIndex'
 import useItemComposable from '~/composables/useItemComposable'
 
 export default function () {
-  const { item, items, createItem, deleteItem, setItem, setItems } = useItemComposable()
+  const { item, items, createItem, deleteItem, setItem, setItems, updateItem } = useItemComposable()
   const apiFetch = useContext().$apiFetch
   const apiUrl = ref(null)
   const dialog = ref(false)
@@ -18,13 +18,15 @@ export default function () {
   })
   const editedIndex = ref(-1)
   const error = ref(null)
-  const filter = ref(null)
+  const errors = ref({})
+  const filter = ref('')
   const loading = ref(false)
   const rowsPerPageOptions = ref([15, 30, 50])
   const totalRecords = ref(null)
 
   function closeDialog () {
     dialog.value = false
+    setErrors({})
     setItem({})
   }
 
@@ -35,15 +37,28 @@ export default function () {
       .then((response) => {
         deleteItem(editedIndex.value)
       }).catch((e) => {
-        error.value = e
+        setError(e)
       })
 
     loading.value = false
   }
 
-  function editItem () {
-    console.log('edit :>> ')
-    closeDialog()
+  async function editItem () {
+    loading.value = true
+
+    await apiFetch.$patch(`${apiUrl.value}/${items.value[editedIndex.value][id.value]}`, item.value)
+      .then((response) => {
+        updateItem(response.data, editedIndex.value)
+        closeDialog()
+      }).catch((e) => {
+        if (e.response.status === 422) {
+          setErrors(e.response.data.errors)
+        } else {
+          error.value = e
+        }
+      })
+
+    loading.value = false
   }
 
   async function getItem () {
@@ -53,7 +68,7 @@ export default function () {
       .then((response) => {
         setItem(response.data)
       }).catch((e) => {
-        error.value = e
+        setError(e)
       })
 
     loading.value = false
@@ -62,12 +77,12 @@ export default function () {
   async function getItems () {
     loading.value = true
 
-    await apiFetch.$get(apiUrl.value, { params: dataTableParameter.value })
+    await apiFetch.$get(apiUrl.value, { params: Object.assign({}, dataTableParameter.value, { filter: filter.value }) })
       .then((response) => {
         setItems(response.data)
         totalRecords.value = response.meta.total
       }).catch((e) => {
-        error.value = e
+        setError(e)
       })
 
     loading.value = false
@@ -79,6 +94,14 @@ export default function () {
 
   function setEditedIndex (value) {
     editedIndex.value = value
+  }
+
+  function setError (value) {
+    error.value = value
+  }
+
+  function setErrors (value) {
+    errors.value = value
   }
 
   function setId (value) {
@@ -93,7 +116,11 @@ export default function () {
         createItem(response.data)
         closeDialog()
       }).catch((e) => {
-        error.value = e
+        if (e.response.status === 422) {
+          setErrors(e.response.data.errors)
+        } else {
+          error.value = e
+        }
       })
 
     loading.value = false
@@ -141,11 +168,16 @@ export default function () {
     value || closeDialog()
   })
 
+  watch(filter, () => {
+    getItems()
+  })
+
   return {
     dataTableParameter,
     dialog,
     dialogDelete,
     error,
+    errors,
     filter,
     item,
     items,

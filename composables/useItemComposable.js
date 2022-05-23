@@ -21,7 +21,7 @@ export default function () {
   }
 
   function updateItem (item, index) {
-    Object.assign(items[index], item)
+    Object.assign(items.value[index], item)
   }
 
   return {
