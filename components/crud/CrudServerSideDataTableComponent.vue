@@ -26,6 +26,8 @@
         :rows="dataTableParameter.rows"
         :rows-per-page-options="rowsPerPageOptions"
         :total-records="totalRecords"
+        :filters.sync="filters"
+        filter-display="row"
         @page="onPage($event)"
         @sort="onSort($event)"
       >
@@ -38,17 +40,37 @@
             <h5 class="m-0">
               Users
             </h5>
-            <CrudDataTableInputSearchComponent :filter.sync="filter" />
+            <CrudDataTableInputSearchComponent :filter="filters.global.value" @update:filter="filters.global.value = $event" />
           </div>
         </template>
 
-        <Column :sortable="true" field="id" header="Id" />
-        <Column :sortable="true" field="name" header="Name" />
-        <Column :sortable="true" field="email" header="Email" />
-        <Column :sortable="true" field="created_at" header="Created At" />
-        <Column :sortable="true" field="updated_at" header="Updated At" />
+        <Column :sortable="true" field="id" header="Id" style="min-width:12rem">
+          <template #filter="{filterModel, filterCallback}">
+            <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Search by id" @keyup.enter="filterCallback()" />
+          </template>
+        </Column>
+        <Column :sortable="true" field="name" header="Name" style="min-width:12rem">
+          <template #filter="{filterModel, filterCallback}">
+            <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Search by name" @keyup.enter="filterCallback()" />
+          </template>
+        </Column>
+        <Column :sortable="true" field="email" header="Email" style="min-width:12rem">
+          <template #filter="{filterModel, filterCallback}">
+            <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Search by email" @keyup.enter="filterCallback()" />
+          </template>
+        </Column>
+        <Column :sortable="true" field="created_at" header="Created At" style="min-width:12rem">
+          <template #filter="{filterModel}">
+            <Calendar v-model="filterModel.value" date-format="yy/mm/dd" placeholder="yyyy/mm/dd" />
+          </template>
+        </Column>
+        <Column :sortable="true" field="updated_at" header="Updated At" style="min-width:12rem">
+          <template #filter="{filterModel}">
+            <Calendar v-model="filterModel.value" date-format="yy/mm/dd" placeholder="yyyy/mm/dd" />
+          </template>
+        </Column>
 
-        <Column header-style="min-width:10rem;">
+        <Column style="min-width:12rem">
           <template #body="slotProps">
             <CrudDataTableEditButtonComponent @button-click="onEdit(slotProps.data);" />
             <CrudDataTableDeleteButtonComponent @button-click="onDelete(slotProps.data)" />
@@ -63,6 +85,7 @@
 </template>
 
 <script setup>
+import { FilterMatchMode } from 'primevue/api'
 import useDataTableServerSideComposable from '~/composables/useDataTableServerSideComposable'
 
 const code = ''
@@ -73,7 +96,7 @@ const {
   dialogDelete,
   error,
   errors,
-  filter,
+  filters,
   item,
   items,
   loading,
@@ -91,5 +114,10 @@ const {
 } = useDataTableServerSideComposable()
 
 setApiUrl('/api/users')
+filters.value = Object.assign({}, filters.value, {
+  id: { value: null, matchMode: FilterMatchMode.EQUALS },
+  name: { value: null, matchMode: FilterMatchMode.EQUALS },
+  email: { value: null, matchMode: FilterMatchMode.EQUALS }
+})
 getItems()
 </script>

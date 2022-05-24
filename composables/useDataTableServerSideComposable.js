@@ -1,5 +1,6 @@
 import { ref, useContext, watch } from '@nuxtjs/composition-api'
 import findIndex from 'lodash/findIndex'
+import { FilterMatchMode } from 'primevue/api'
 import useItemComposable from '~/composables/useItemComposable'
 
 export default function () {
@@ -19,7 +20,11 @@ export default function () {
   const editedIndex = ref(-1)
   const error = ref(null)
   const errors = ref({})
-  const filter = ref('')
+  const filters = ref({
+    global: { value: '', matchMode: FilterMatchMode.CONTAINS },
+    created_at: { value: null, matchMode: FilterMatchMode.EQUALS },
+    updated_at: { value: null, matchMode: FilterMatchMode.EQUALS }
+  })
   const loading = ref(false)
   const rowsPerPageOptions = ref([15, 30, 50])
   const totalRecords = ref(null)
@@ -77,7 +82,7 @@ export default function () {
   async function getItems () {
     loading.value = true
 
-    await apiFetch.$get(apiUrl.value, { params: Object.assign({}, dataTableParameter.value, { filter: filter.value }) })
+    await apiFetch.$get(apiUrl.value, { params: Object.assign({}, dataTableParameter.value, filters.value) })
       .then((response) => {
         setItems(response.data)
         totalRecords.value = response.meta.total
@@ -168,7 +173,7 @@ export default function () {
     value || closeDialog()
   })
 
-  watch(filter, () => {
+  watch(filters, () => {
     getItems()
   })
 
@@ -178,7 +183,7 @@ export default function () {
     dialogDelete,
     error,
     errors,
-    filter,
+    filters,
     item,
     items,
     loading,
